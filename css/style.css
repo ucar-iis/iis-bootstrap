@@ -1,0 +1,140 @@
+/********************************
+/*
+/* CSS for IIS Bootstrap sub-theme
+/*
+/* author struex at ucar dot edu
+/*
+******************************* */
+
+body {
+	background: url('../images/bg.jpg') repeat-x #E3E4E6;
+}
+
+/* Navbar CSS overrides */
+
+/* Adjust navbar container size */
+.navbar.container {
+	margin-top: 0;
+	max-width: 100%;
+}
+
+/* Set navbar background-color  */
+.navbar-default {
+	background-color: #003366;
+	border: none;
+}
+
+/* Set navbar brand font color */
+.navbar-default .navbar-brand {
+	color: #ffffff;
+}
+
+/* Set brand font-size for xs screen  */
+.navbar-brand {
+	font-size: 1em;
+}
+
+/* Adjust navbar-nav margin etc */
+.navbar-nav {
+	margin-top: 0;
+}
+
+/* Set logo image size */
+.logo img {
+	max-width: 50px;
+}
+
+/* Don't display search box on xs screens */
+.block-search form, .block-google-cse form {
+	display: none;
+}
+
+/* Don't display lead text on xs screens */
+#page-header .lead {
+	display: none;
+}
+
+/* Don't display secondary menu with login/logout link */
+
+.secondary {
+	display: none;
+}
+
+
+/* Media queries for responsive elements */
+
+@media all and (min-width:768px) {
+
+/* Remove border-radius at 768px and up */
+	.navbar {
+		border-radius: 0;
+	}
+
+/* Set container size for 768px and up */
+	.navbar.container {
+		width: 100%;
+		padding-left: 30px;
+		padding-right: 20px;
+	}
+
+/* Set logo image size for 768px and up */        
+	.logo img {
+		max-width: 220px;
+	}
+
+/* Set navbar-brand font-size for 768px and up */
+	.navbar-brand {
+		font-size: 2em;
+	}
+
+/* Show and adjust search form display for 768px and up */	
+	.block-search form, .block-google-cse form {
+/*-		display: block;
+		width: 167px;
+		height: 28px;-
+		float: right;
+*/
+	}
+
+/* Show and adjust display of lead text for 768px and up */
+	#page-header .lead {
+		display: block;
+/*		width: 300px;
+		float: right;
+		position: absolute;
+		right: 0;
+		top: 100px;
+		color: #ffffff;
+*/
+	}
+
+	.navbar-nav {
+/*		position: absolute;
+		top: 0;
+*/
+	}
+	
+	.navbar-header {
+/*		position: absolute;
+		top: 40px;
+*/
+	}
+	
+	.main-container {
+/*		position: absolute;
+		top: 140px;
+*/
+	}
+	
+	.navbar-default {
+/*		height: 130px;
+*/
+	}
+
+/* Remove left padding on navbar-collapse for 768px and up */
+
+	.navbar-collapse {
+		padding-left: 0;
+	}
+}
+
