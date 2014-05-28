@@ -39,6 +39,11 @@ body {
 	margin-top: 0;
 }
 
+.navbar-header {
+	padding-left: 30px;
+	padding-right: 20px;
+}
+
 /* Set logo image size */
 .logo img {
 	max-width: 50px;
@@ -79,9 +84,6 @@ body {
 /* Set container size for 768px and up */
 	.navbar.container {
 		width: 100%;
-		padding-left: 30px;
-		padding-right: 20px;
-		margin-top: 40px;
 	}
 
 /* Set logo image size for 768px and up */        
