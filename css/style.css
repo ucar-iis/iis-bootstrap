@@ -60,6 +60,12 @@ body {
 	display: none;
 }
 
+/* Front page slideshow */
+
+/* Make slide size responsive */
+.view-content img {
+	max-width: 100%!important;
+}
 
 /* Media queries for responsive elements */
 
@@ -75,6 +81,7 @@ body {
 		width: 100%;
 		padding-left: 30px;
 		padding-right: 20px;
+		margin-top: 40px;
 	}
 
 /* Set logo image size for 768px and up */        
@@ -89,46 +96,24 @@ body {
 
 /* Show and adjust search form display for 768px and up */	
 	.block-search form, .block-google-cse form {
-/*-		display: block;
-		width: 167px;
-		height: 28px;-
-		float: right;
-*/
 	}
 
 /* Show and adjust display of lead text for 768px and up */
 	#page-header .lead {
 		display: block;
-/*		width: 300px;
-		float: right;
-		position: absolute;
-		right: 0;
-		top: 100px;
-		color: #ffffff;
-*/
+		color: #fff;
 	}
 
 	.navbar-nav {
-/*		position: absolute;
-		top: 0;
-*/
 	}
 	
 	.navbar-header {
-/*		position: absolute;
-		top: 40px;
-*/
 	}
 	
 	.main-container {
-/*		position: absolute;
-		top: 140px;
-*/
 	}
 	
 	.navbar-default {
-/*		height: 130px;
-*/
 	}
 
 /* Remove left padding on navbar-collapse for 768px and up */
