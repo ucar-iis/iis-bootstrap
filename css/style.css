@@ -59,6 +59,10 @@ body {
 	display: none;
 }
 
+.lead {
+	color: #ffffff;
+}
+
 /* Don't display secondary menu with login/logout link */
 
 .secondary {
@@ -70,6 +74,18 @@ body {
 /* Make slide size responsive */
 .view-content img {
 	max-width: 100%;
+}
+
+/* Override default styling for jumbotron */
+
+.jumbotron {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container .jumbotron {
+  border-radius: 0;
 }
 
 /* Media queries for responsive elements */
@@ -106,7 +122,8 @@ body {
 		color: #fff;
 	}
 
-	.navbar-nav {
+	.navbar {
+		margin-bottom: 0;
 	}
 	
 	.navbar-header {
