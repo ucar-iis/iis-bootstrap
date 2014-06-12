@@ -14,7 +14,7 @@ body {
 
 /* Adjust navbar container size */
 .navbar.container {
-	margin-top: 0;
+	margin-top: 40px;
 	max-width: 100%;
 }
 
@@ -69,7 +69,7 @@ body {
 
 /* Make slide size responsive */
 .view-content img {
-	max-width: 100%!important;
+	max-width: 100%;
 }
 
 /* Media queries for responsive elements */
