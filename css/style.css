@@ -12,10 +12,20 @@ body {
 
 /* Navbar CSS overrides */
 
+.navbar {
+	margin-bottom: 0;
+}
+
 /* Adjust navbar container size */
 .navbar.container {
-	margin-top: 40px;
+	margin-top: 3px; /* Set navbar top margin to zero for screens below 768px */
 	max-width: 100%;
+}
+
+.navbar.container > .container {
+	max-width: 980px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 /* Set navbar background-color  */
@@ -37,11 +47,21 @@ body {
 /* Adjust navbar-nav margin etc */
 .navbar-nav {
 	margin-top: 0;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .navbar-header {
-	padding-left: 30px;
-	padding-right: 20px;
+	padding-left: 20px;
+	padding-right: 0;
+	padding-top: 7px;
+}
+
+/* Remove default padding on navbar-collapse */
+
+.navbar-collapse {
+        padding-left: 0;
+	padding-right: 0;
 }
 
 /* Set logo image size */
@@ -51,16 +71,45 @@ body {
 
 /* Don't display search box on xs screens */
 .block-search form, .block-google-cse form {
-	display: none;
+	/*display: none;*/
+}
+
+/* Position etc for IIS nav */
+
+.iis-nav {
+	position: relative;
+	top: -45px;
+}
+
+.navbar-nav>li>a {
+	padding-top: 8px;
+	padding-bottom: 10px;
+	margin-top: 0;
+}
+
+.navbar-default .iis-nav .navbar-nav>li>a {
+	color: #FFFFFF;
+}
+
+/* Change navabr active link style */
+.navbar-default .navbar-nav>.active>a {
+	background-color: #428BCA;
+}
+
+.iis-nav .navbar-header {
+	/*position: relative;
+	top: 0;*/
+}
+
+/* Fix bug in #loaderOrg */
+
+#orgNavV1 #loaderOrg {
+	width: 26px!important; /* This is the loaderOrg CSS hack */
 }
 
 /* Don't display lead text on xs screens */
-#page-header .lead {
+#page-header .lead, .navbar.container .lead {
 	display: none;
-}
-
-.lead {
-	color: #ffffff;
 }
 
 /* Don't display secondary menu with login/logout link */
@@ -78,14 +127,92 @@ body {
 
 /* Override default styling for jumbotron */
 
-.jumbotron {
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
+.container .jumbotron {
+ 	max-width: 980px;
+ 	margin-left: auto;
+	margin-right: auto;
+	background-color: #121212;
+	color: #FFFFFF;
+	padding-right: 0;
+	padding-left: 0;
+  	border-radius: 0;
 }
 
-.container .jumbotron {
-  border-radius: 0;
+/* Force all divs contained within jumbortron, e.g. highlighted section, not to exceed 980 width */
+.jumbotron div {
+	max-width: 980px;
+}
+
+/* Containers */
+
+.main-container {
+	background: #FFFFFF;
+	max-width: 980px;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 40px;
+}
+
+.content, .page-header {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.content {
+	padding-bottom: 40px;
+	min-height: 268px;
+}
+
+.region > section {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+/* Page header */
+
+h1.page-header {
+	margin-top: 40px;
+	font-size: 1.3em;
+        text-transform: uppercase;
+}
+
+/* Hide Home page header on Front page */
+.front .page-header {
+	display: none;
+}
+
+/* Footer */
+
+.footer {
+	margin-top: 0;
+}
+
+#orgFooter p {
+	color: #666666;
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.footer #orgFooter a {
+	color: #D75911;
+}
+
+.footer #orgFooter a:hover {
+        color: #D75911;
+	text-decoration: underline;
+}
+
+/* Section styling */
+
+section {
+	/*padding-left: 40px;
+	padding-right: 40px;*/
+}
+
+/* Hack to remove space between Home page sections */
+
+#node-18 {
+	display: none;
 }
 
 /* Media queries for responsive elements */
@@ -100,6 +227,8 @@ body {
 /* Set container size for 768px and up */
 	.navbar.container {
 		width: 100%;
+		margin-top: 40px;
+		height: 82px;
 	}
 
 /* Set logo image size for 768px and up */        
@@ -110,10 +239,20 @@ body {
 /* Set navbar-brand font-size for 768px and up */
 	.navbar-brand {
 		font-size: 2em;
+		padding-top: 25px;
 	}
 
 /* Show and adjust search form display for 768px and up */	
 	.block-search form, .block-google-cse form {
+	}
+
+/* Positioning etc for lead tagline in main navbar for 768 and up */
+
+	.navbar.container > .container .lead {
+		margin-top: -20px;
+		color: #ffffff;
+        	width: 300px;
+        	float: right;
 	}
 
 /* Show and adjust display of lead text for 768px and up */
@@ -122,23 +261,33 @@ body {
 		color: #fff;
 	}
 
-	.navbar {
-		margin-bottom: 0;
-	}
-	
 	.navbar-header {
-	}
-	
-	.main-container {
-	}
-	
-	.navbar-default {
-	}
-
-/* Remove left padding on navbar-collapse for 768px and up */
-
-	.navbar-collapse {
+		position: relative;
+		top: -45px;
 		padding-left: 0;
 	}
+
+/* Override default width for container class 768 and up */
+	.main-container.container {
+        	width: 100%;
+	}
+
+	.navbar-nav>li>a {
+        	margin-top: 6px; 
+	}
+
+	.content, .page-header {
+        	max-width: 800px;
+        	margin-left: auto;
+	        margin-right: auto;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+/* Set min-height for content container class at 768 up */
+	.content {
+        	min-height: 300px;
+	}
+
 }
 
