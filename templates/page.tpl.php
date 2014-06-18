@@ -116,7 +116,8 @@
     </div>
     
     <div class="visible-xs row">    
-    <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+
+     <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
       <div class="navbar-collapse collapse">
         <nav role="navigation">
           <?php if (!empty($primary_nav)): ?>
@@ -189,4 +190,6 @@
 </div>
 <footer class="footer container">
   <?php print render($page['footer']); ?>
+/* Script for Jasny Bootstrap extentsion */
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>  
 </footer>
