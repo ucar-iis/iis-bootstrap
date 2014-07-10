@@ -6,20 +6,73 @@
 /*
 ******************************* */
 
+/* Add background image to body */
 body {
 	background: url('../images/bg.jpg') repeat-x #E3E4E6;
 }
 
-/* Navbar CSS overrides */
+/*********************
 
+Misc global elements
+
+*********************/
+
+/* Login */
+
+/* Hide login link by matching background color so that non-Drupal users don't see it */
+#loginlink a {
+	color: #E5E5E5;
+}
+
+#loginlink a:hover {
+	color: #428BCA;
+}
+
+/* Logo */
+
+.logo img {
+        display: none; /* Don't display logo img on xs screens  */
+        max-width: 50px; /* Set logo image size */
+}
+
+/* Search */
+
+/* Don't display search box on xs screens */
+.block-search form, .block-google-cse form {
+	/*display: none;*/
+}
+
+/* Page header */
+
+h1.page-header {
+	margin-top: 40px;
+	font-size: 1.3em;
+        text-transform: uppercase;
+}
+
+/* Lead Text */
+
+/* Don't display lead text on xs screens */
+#page-header .lead, .navbar.container .lead {
+	display: none;
+}
+
+/*************
+
+Navbar 
+
+*************/
+
+/* Remove bottom margin from navbar */
 .navbar {
 	margin-bottom: 0;
 }
 
 /* Adjust navbar container size */
 .navbar.container {
-	margin-top: 3px; /* Set navbar top margin to zero for screens below 768px */
+	margin-top: 3px; /* Set navbar top margin to zero for xs screens */
 	max-width: 100%;
+	padding-left: 10px;
 }
 
 .navbar.container > .container {
@@ -52,8 +105,8 @@ body {
 }
 
 .navbar-header {
-	padding-left: 20px;
-	padding-right: 0;
+	/*padding-left: 0;
+	padding-right: 0;*/
 	padding-top: 7px;
 }
 
@@ -64,18 +117,10 @@ body {
 	padding-right: 0;
 }
 
-/* Set logo image size */
-.logo img {
-	max-width: 50px;
-}
-
-/* Don't display search box on xs screens */
-.block-search form, .block-google-cse form {
-	/*display: none;*/
-}
 
 /* Position etc for IIS nav */
 
+/* Rewrite iis-nav to be generic i.e. use Drupal regions etc */
 .iis-nav {
 	position: relative;
 	top: -45px;
@@ -96,34 +141,43 @@ body {
 	background-color: #428BCA;
 }
 
-.iis-nav .navbar-header {
-	/*position: relative;
-	top: 0;*/
-}
+/*******************************
+
+Tweaks to UCAR orgNav 
+
+*******************************/
 
 /* Fix bug in #loaderOrg */
 
 #orgNavV1 #loaderOrg {
 	width: 26px!important; /* This is the loaderOrg CSS hack */
+	/*display: none!important;*/
 }
 
-/* Don't display lead text on xs screens */
-#page-header .lead, .navbar.container .lead {
+#orgNavV1 div#emergencyOrg, div#peopleOrg, div#contactOrg, orgNavV1 div {
+	/*float: left!important;*/
+}
+
+#orgNav div ul {
+	/*padding-right: 0;*/
+}
+
+#orgNavV1 div#peopleOrg ul li, #orgNavV1 div#contactOrg ul li {
+	/*padding-left: 0!important;
+	padding-right: 0!important;*/
+}
+
+/* Temp hide People Org so orgNav fits on xs screens */
+
+div#peopleOrg {
 	display: none;
 }
 
-/* Don't display secondary menu with login/logout link */
+/*****************
 
-.secondary {
-	display: none;
-}
+Containers 
 
-/* Front page slideshow */
-
-/* Make slide size responsive */
-.view-content img {
-	max-width: 100%;
-}
+*****************/
 
 /* Override default styling for jumbotron */
 
@@ -143,8 +197,6 @@ body {
 	max-width: 980px;
 }
 
-/* Containers */
-
 .main-container {
 	background: #FFFFFF;
 	max-width: 980px;
@@ -153,7 +205,7 @@ body {
 	padding-bottom: 40px;
 }
 
-.content, .page-header {
+.page-header {
 	padding-left: 20px;
 	padding-right: 20px;
 }
@@ -163,25 +215,73 @@ body {
 	min-height: 268px;
 }
 
-.region > section {
-	padding-left: 40px;
-	padding-right: 40px;
+/* Remove default negative left and right padding on rows */
+.row {
+	padding-left: 0;
+	padding-right: 0;
 }
 
-/* Page header */
+/*******************
 
-h1.page-header {
-	margin-top: 40px;
-	font-size: 1.3em;
-        text-transform: uppercase;
+Drupal Regions 
+
+*******************/
+
+/* Set margins for highlighted region */
+.region-highlighted {
+	margin-left: 30px;
+	margin-right: 30px;
 }
 
-/* Hide Home page header on Front page */
-.front .page-header {
+.region-sidebar-second section {
+	margin: 30px;
+}
+
+.region-content {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.secondary {
+	display: none; /* Don't display secondary menu with login/logout link */
+}
+
+/*************
+
+Blocks
+
+*************/
+
+/* Share buttons */
+
+#block-block-16 { /* Don't display old Share buttons */
 	display: none;
 }
 
-/* Footer */
+/******************
+
+Home page specific 
+
+******************/
+
+.front .page-header {
+	display: none; /* Hide Home page header on Front page */
+}
+
+.front .region-content {
+	padding-left: 30px;
+}
+
+/* Hack to remove space between Home page sections */
+.front #node-18 {
+	display: none;
+}
+
+/**************
+
+Footer 
+
+**************/
 
 .footer {
 	margin-top: 0;
@@ -202,22 +302,63 @@ h1.page-header {
 	text-decoration: underline;
 }
 
-/* Section styling */
+/******************************************
 
-section {
-	/*padding-left: 40px;
-	padding-right: 40px;*/
+Media queries for responsive elements 
+
+******************************************/
+
+/* Phone landscape */
+@media all and (min-width:500px) {
+	
+/* Do display logo img 500px and up  */
+	.logo img {
+        	display: block;
+	}
+
+	.navbar-header {
+        	padding-left: 20px;
+	}
+	
+	.region-content, .page-header {
+		padding-left: 30px;
+	}
+	
+/* Display People Org so orgNav starting with Phone landscape view */
+	div#peopleOrg {
+		display: block;
+	}
+	
 }
 
-/* Hack to remove space between Home page sections */
-
-#node-18 {
-	display: none;
-}
-
-/* Media queries for responsive elements */
+/* Tablet portrait */
 
 @media all and (min-width:768px) {
+
+/* Misc 768 up */
+
+/* Logo 768 up */
+
+/* Set logo image size for 768px and up */        
+	.logo img {
+		max-width: 220px;
+	}
+
+/* Search 768 up */
+
+/* Show and adjust search form display for 768px and up */	
+	.block-search form, .block-google-cse form {
+	}
+
+/* Page Header 768 up */
+
+/* Show and adjust display of lead text for 768px and up */
+	#page-header .lead {
+		display: block;
+		color: #fff;
+	}
+	
+/* Navbar 768px and up */
 
 /* Remove border-radius at 768px and up */
 	.navbar {
@@ -230,64 +371,68 @@ section {
 		margin-top: 40px;
 		height: 82px;
 	}
-
-/* Set logo image size for 768px and up */        
-	.logo img {
-		max-width: 220px;
-	}
-
+	
 /* Set navbar-brand font-size for 768px and up */
 	.navbar-brand {
 		font-size: 2em;
 		padding-top: 25px;
 	}
 
-/* Show and adjust search form display for 768px and up */	
-	.block-search form, .block-google-cse form {
-	}
-
 /* Positioning etc for lead tagline in main navbar for 768 and up */
-
 	.navbar.container > .container .lead {
 		margin-top: -20px;
 		color: #ffffff;
-        	width: 300px;
-        	float: right;
-	}
+        width: 300px;
+        float: right;
+	}	
 
-/* Show and adjust display of lead text for 768px and up */
-	#page-header .lead {
-		display: block;
-		color: #fff;
-	}
-
+/* Set properties for navbar-header 768 and up */
 	.navbar-header {
 		position: relative;
 		top: -45px;
-		padding-left: 0;
-	}
-
-/* Override default width for container class 768 and up */
-	.main-container.container {
-        	width: 100%;
 	}
 
 	.navbar-nav>li>a {
         	margin-top: 6px; 
 	}
 
-	.content, .page-header {
-        	max-width: 800px;
-        	margin-left: auto;
-	        margin-right: auto;
-		padding-left: 0;
-		padding-right: 0;
-	}
+/* Containers 768 up */
 
 /* Set min-height for content container class at 768 up */
 	.content {
         	min-height: 300px;
 	}
 
+/* Override default width for container class 768 and up */
+	.main-container.container {
+        	width: 100%;
+	}
+		
+/* Regions 768px and up */
+
+/* Blocks */
+
+/* Who We Are block 768 up */
+
+	#block-block-13, #block-block-13 .block-title {
+		margin-top: 0;
+		margin-right: 0;
+		margin-left: 0;
 }
 
+/* Home page specific 768 up */
+	.front .content {
+    	max-width: 800px;
+        margin-left: auto;
+	    margin-right: auto;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+/* Main content 768 up */
+	.front .region-content {
+		max-width: 60%;
+		float: left;
+	}	
+
+}
