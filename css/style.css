@@ -331,7 +331,7 @@ Media queries for responsive elements
 	
 }
 
-/* Tablet portrait */
+/* Tablet Portrait */
 
 @media all and (min-width:768px) {
 
@@ -434,5 +434,21 @@ Media queries for responsive elements
 		max-width: 60%;
 		float: left;
 	}	
+
+}
+
+/* Tablet Landscape and Medium Large desktop screens */
+
+/* For screens 980px and up */
+@media all and (min-width:980px) {
+
+/* Constrain page-header and region-content width */	
+	.page-header, .region-content {
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 0;
+		padding-right: 0;
+	}
 
 }
