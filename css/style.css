@@ -46,8 +46,7 @@ Misc global elements
 
 h1.page-header {
 	margin-top: 40px;
-	font-size: 1.3em;
-        text-transform: uppercase;
+	font-size: 1.7em;
 }
 
 /* Lead Text */
@@ -251,6 +250,11 @@ Drupal Regions
 Blocks
 
 *************/
+
+/* Adjust block-title font styling */
+.front .block-title {
+	font-size: 1.7em;
+}
 
 /* Share buttons */
 
