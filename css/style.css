@@ -9,6 +9,8 @@
 /* Add background image to body */
 body {
 	background: url('../images/bg.jpg') repeat-x #E3E4E6;
+	padding-top: 0!important;
+	/*margin-top: 40px;*/
 }
 
 /*********************
@@ -78,6 +80,7 @@ Navbar
 	max-width: 980px;
 	margin-right: auto;
 	margin-left: auto;
+	margin-top: 20px; /* Fixes OrgNav jump bug for xs screens */
 }
 
 /* Set navbar background-color  */
@@ -121,8 +124,8 @@ Navbar
 
 /* Rewrite iis-nav to be generic i.e. use Drupal regions etc */
 .iis-nav {
-	position: relative;
-	top: -45px;
+	/*position: relative;
+	top: -28px;*/
 }
 
 .navbar-nav>li>a {
@@ -147,6 +150,11 @@ Tweaks to UCAR orgNav
 *******************************/
 
 /* Fix bug in #loaderOrg */
+
+#orgNavV1 {
+	/*border-bottom: 1px solid #EED45E!important;*/
+	/*height: 2px;*/
+}
 
 #orgNavV1 #loaderOrg {
 	width: 26px!important; /* This is the loaderOrg CSS hack */
@@ -363,7 +371,12 @@ Media queries for responsive elements
 	}
 	
 /* Navbar 768px and up */
-
+/*
+	#navbar {
+		position: relative;
+		top: 0;
+	}
+*/
 /* Remove border-radius at 768px and up */
 	.navbar {
 		border-radius: 0;
@@ -371,9 +384,11 @@ Media queries for responsive elements
 
 /* Set container size for 768px and up */
 	.navbar.container {
+	/*	position: relative;
+		top: 23px;*/
 		width: 100%;
-		margin-top: 40px;
 		height: 82px;
+		padding-top: 40px;
 	}
 	
 /* Set navbar-brand font-size for 768px and up */
@@ -386,14 +401,14 @@ Media queries for responsive elements
 	.navbar.container > .container .lead {
 		margin-top: -20px;
 		color: #ffffff;
-        width: 300px;
-        float: right;
+        	width: 300px;
+        	float: right;
 	}	
 
 /* Set properties for navbar-header 768 and up */
 	.navbar-header {
-		position: relative;
-		top: -45px;
+		/*position: relative;
+		top: -45px*/
 	}
 
 	.navbar-nav>li>a {
